@@ -1,0 +1,162 @@
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+q,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 100%;
+   font: inherit;
+   vertical-align: baseline;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+   display: block;
+}
+body {
+   line-height: 1;
+   background-color: #15202b;
+}
+::-webkit-scrollbar {
+   background: #15202b;
+}
+::-webkit-scrollbar-thumb {
+   background: #f7ebeb;
+   border-radius: 10px;
+}
+
+ol,
+ul {
+   list-style: none;
+}
+blockquote,
+q {
+   quotes: none;
+}
+blockquote:after,
+blockquote:before,
+q:after,
+q:before {
+   content: "";
+   content: none;
+}
+table {
+   border-collapse: collapse;
+   border-spacing: 0;
+}
+.cf:after,
+.cf:before {
+   content: " ";
+   display: table;
+}
+.cf:after {
+   clear: both;
+}
+
+html {
+   font-size: 16px;
+}
+
+@media screen and (min-width: 760px) {
+   html {
+      font-size: 18px;
+   }
+}
+
+@media screen and (min-width: 800px) {
+   html {
+      font-size: 19px;
+   }
+}
+
+@media screen and (min-width: 1200px) {
+   html {
+      font-size: 20px;
+   }
+}

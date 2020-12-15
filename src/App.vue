@@ -1,30 +1,84 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+   <div class="container">
+      <router-view />
+   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<style scoped>
+   .container {
+      width: 100%;
+      margin: 0 auto 30px auto;
+   }
 
-#nav {
-  padding: 30px;
-}
+   @media screen and (min-width: 600px) {
+      .container {
+         width: 90%;
+      }
+   }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+   @media screen and (min-width: 770px) {
+      .container {
+         width: 86%;
+      }
+   }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+   @media screen and (min-width: 900px) {
+      .container {
+         width: 80%;
+      }
+   }
+
+   @media screen and (min-width: 980px) {
+      .container {
+         width: 77%;
+      }
+   }
+
+   @media screen and (min-width: 1060px) {
+      .container {
+         width: 73%;
+      }
+   }
+
+   @media screen and (min-width: 1100px) {
+      .container {
+         width: 69%;
+      }
+   }
+
+   @media screen and (min-width: 1160px) {
+      .container {
+         width: 63%;
+      }
+   }
+
+   @media screen and (min-width: 1300px) {
+      .container {
+         width: 60%;
+      }
+   }
+
+   @media screen and (min-width: 1450px) {
+      .container {
+         width: 57%;
+      }
+   }
+
+   @media screen and (min-width: 1570px) {
+      .container {
+         width: 54%;
+      }
+   }
+
+   @media screen and (min-width: 1750px) {
+      .container {
+         width: 49%;
+      }
+   }
+
+   @media screen and (min-width: 1850px) {
+      .container {
+         width: 46%;
+      }
+   }
 </style>
