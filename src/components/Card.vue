@@ -24,19 +24,19 @@
 
 <style scoped>
    .card {
-      padding: 26px;
+      padding: 20px;
       color: #ffffff;
       margin-bottom: -1px;
       letter-spacing: 0.9px;
       font-family: monospace;
       background-color: #131c25;
-      border-top: 7px dashed #253a50;
+      border-top: 5px solid #253a50;
    }
 
    .name {
       color: #b485d8;
       font-weight: bold;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       text-decoration: none;
    }
 
@@ -54,8 +54,8 @@
 
    p {
       color: #e9d8e0;
-      font-size: 1.1rem;
-      margin-bottom: 11px;
+      font-size: 1rem;
+      margin-bottom: 9px;
       font-family: monospace;
    }
 

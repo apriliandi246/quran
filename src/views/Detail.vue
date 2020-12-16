@@ -3,6 +3,11 @@
 
    <div v-if="surah === null">
       <Skeleton />
+      <Skeleton />
+      <Skeleton />
+      <Skeleton />
+      <Skeleton />
+      <Skeleton />
    </div>
    <div v-else>
       <div class="card">
@@ -57,6 +62,8 @@
       },
 
       mounted() {
+         window.scrollTo(0, 0);
+
          fetch(
             `https://raw.githubusercontent.com/penggguna/QuranJSON/master/surah/${this.id}.json`,
             signal
@@ -80,13 +87,13 @@
       letter-spacing: 0.9px;
       font-family: monospace;
       background-color: #131c25;
-      border-top: 7px dashed #253a50;
+      border-top: 5px solid #253a50;
    }
 
    .name {
       color: #b485d8;
       font-weight: bold;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       text-decoration: none;
    }
 
@@ -100,7 +107,7 @@
 
    p {
       color: #e9d8e0;
-      font-size: 1.1rem;
+      font-size: 1rem;
       margin-bottom: 11px;
       font-family: monospace;
    }

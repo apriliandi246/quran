@@ -1,6 +1,6 @@
 <template>
    <div class="skeleton">
-      <div class="block"></div>
+      <div class="block first_block"></div>
       <div class="block"></div>
       <div class="block"></div>
       <div class="block"></div>
@@ -10,13 +10,20 @@
 
 <style scoped>
    .skeleton {
-      padding: 30px;
-      border-top: 8px dotted #583672;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      border-top: 5px solid #583672;
+   }
+
+   .first_block {
+      margin-top: 22px;
    }
 
    .block {
-      width: 366px;
-      height: 30px;
+      width: 320px;
+      height: 26px;
       border-radius: 4px;
       margin-bottom: 25.4px;
       animation: loading 1s ease-in-out infinite alternate;
@@ -24,7 +31,7 @@
 
    @media screen and (min-width: 770px) {
       .skeleton {
-         border-top: 11px dotted #583672;
+         border-top: 5px solid #583672;
       }
    }
 

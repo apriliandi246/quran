@@ -1,13 +1,37 @@
 <template>
    <div class="container">
       <router-view />
+      <div @click="scrollToTop" class="scroll-top">🔼</div>
    </div>
 </template>
 
+<script>
+   export default {
+      methods: {
+         scrollToTop() {
+            window.scrollTo(0, 0);
+         },
+      },
+   };
+</script>
+
 <style scoped>
    .container {
-      width: 100%;
+      width: 92%;
       margin: 0 auto 30px auto;
+   }
+
+   .scroll-top {
+      top: 0;
+      right: 0;
+      padding: 10px;
+      cursor: pointer;
+      position: fixed;
+      font-size: 1.3rem;
+      margin-top: 910px;
+      border-radius: 4px;
+      margin-right: 26px;
+      background-color: #38516d;
    }
 
    @media screen and (min-width: 600px) {
