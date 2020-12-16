@@ -17,8 +17,8 @@
    .block {
       width: 400px;
       height: 30px;
-      margin-bottom: 23px;
-      border-radius: 3px;
+      border-radius: 4px;
+      margin-bottom: 24px;
       animation: loading 1s ease-in-out infinite alternate;
    }
 

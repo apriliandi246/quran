@@ -104,13 +104,12 @@ body {
    background-color: #15202b;
 }
 ::-webkit-scrollbar {
-   background: #15202b;
+   background: #2d3238;
 }
 ::-webkit-scrollbar-thumb {
-   background: #f7ebeb;
-   border-radius: 10px;
+   background: #ffffff;
+   border-radius: 8px;
 }
-
 ol,
 ul {
    list-style: none;

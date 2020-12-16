@@ -1,15 +1,25 @@
 <template>
    <div class="card">
-      <router-link to="/surah/1" class="name">📌 Al-Fatiha</router-link>
-      <p class="translation">🔎 The Opening</p>
-      <p class="number_of_surah">🔢 Number of surah : 1</p>
-      <p class="number_of_ayah">🔢 Number of ayah : 7</p>
-      <p class="type">🗺 Mecca</p>
+      <router-link
+         class="name"
+         :to="{ name: 'Detail', params: { id: surah.number_of_surah } }"
+         >📌 {{ surah.name }}</router-link
+      >
+      <p class="translation">🔎 {{ surah.name_translations.en }}</p>
+      <p class="number_of_surah">
+         🔢 Number of surah : {{ surah.number_of_surah }}
+      </p>
+      <p class="number_of_ayah">
+         🔢 Number of ayah : {{ surah.number_of_ayah }}
+      </p>
+      <p class="type">🗺 {{ surah.type }}</p>
    </div>
 </template>
 
 <script>
-   export default {};
+   export default {
+      props: ["surah"],
+   };
 </script>
 
 <style scoped>
@@ -19,7 +29,7 @@
       margin-bottom: -1px;
       letter-spacing: 0.9px;
       font-family: monospace;
-      border-top: 9px dotted #583672;
+      border-top: 8px dotted #583672;
    }
 
    .name {
@@ -38,7 +48,7 @@
    }
 
    .type {
-      margin-bottom: 2px;
+      margin-bottom: 5px;
    }
 
    p {
@@ -50,7 +60,7 @@
 
    @media screen and (min-width: 770px) {
       .card {
-         border-top: 11px dotted #583672;
+         border-top: 10px dotted #583672;
       }
 
       .name {
