@@ -22,16 +22,20 @@
    }
 
    .scroll-top {
-      top: 0;
+      top: 91%;
       right: 0;
       padding: 10px;
       cursor: pointer;
       position: fixed;
       font-size: 1.3rem;
-      margin-top: 910px;
       border-radius: 4px;
-      margin-right: 26px;
+      margin-right: 30px;
+      transition: transform 0.1s;
       background-color: #38516d;
+   }
+
+   .scroll-top:hover {
+      transform: scale(1.1);
    }
 
    @media screen and (min-width: 600px) {

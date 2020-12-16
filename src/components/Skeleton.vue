@@ -22,7 +22,7 @@
    }
 
    .block {
-      width: 320px;
+      width: 290px;
       height: 26px;
       border-radius: 4px;
       margin-bottom: 25.4px;
