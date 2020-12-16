@@ -1,5 +1,5 @@
 <template>
-   <h1>Qur'an</h1>
+   <router-link to="/">Qur'an</router-link>
 </template>
 
 <script>
@@ -7,15 +7,17 @@
 </script>
 
 <style scoped>
-   h1 {
+   a {
       padding: 33px;
+      display: block;
       color: #f1f4f5;
       font-weight: bold;
-      font-size: 1.8rem;
+      font-size: 1.9rem;
       text-align: right;
       font-style: italic;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
       letter-spacing: 5px;
       font-family: cursive;
+      text-decoration: none;
    }
 </style>

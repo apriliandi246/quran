@@ -24,12 +24,13 @@
 
 <style scoped>
    .card {
-      padding: 23px;
+      padding: 26px;
       color: #ffffff;
       margin-bottom: -1px;
       letter-spacing: 0.9px;
       font-family: monospace;
-      border-top: 8px dotted #583672;
+      background-color: #131c25;
+      border-top: 7px dashed #253a50;
    }
 
    .name {
@@ -59,10 +60,6 @@
    }
 
    @media screen and (min-width: 770px) {
-      .card {
-         border-top: 10px dotted #583672;
-      }
-
       .name {
          font-size: 1.3rem;
          margin-bottom: 20px;

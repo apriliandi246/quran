@@ -11,14 +11,14 @@
 <style scoped>
    .skeleton {
       padding: 30px;
-      border-top: 9px dotted #583672;
+      border-top: 8px dotted #583672;
    }
 
    .block {
-      width: 400px;
+      width: 366px;
       height: 30px;
       border-radius: 4px;
-      margin-bottom: 24px;
+      margin-bottom: 25.4px;
       animation: loading 1s ease-in-out infinite alternate;
    }
 
