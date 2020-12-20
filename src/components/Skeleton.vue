@@ -10,6 +10,7 @@
 
 <style scoped>
    .skeleton {
+      width: 92%;
       padding: 18px;
       display: flex;
       flex-direction: column;
@@ -22,7 +23,7 @@
    }
 
    .block {
-      width: 290px;
+      width: 100%;
       height: 26px;
       border-radius: 4px;
       margin-bottom: 25.4px;

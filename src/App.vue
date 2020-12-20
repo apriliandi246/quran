@@ -22,7 +22,7 @@
    }
 
    .scroll-top {
-      top: 91%;
+      top: 88%;
       right: 0;
       padding: 10px;
       cursor: pointer;

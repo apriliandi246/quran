@@ -29,9 +29,9 @@
    .verse {
       font-weight: 550;
       margin-top: 25px;
-      line-height: 28px;
+      line-height: 32px;
       text-align: right;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       margin-bottom: 35px;
    }
 
