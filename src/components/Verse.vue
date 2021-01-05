@@ -3,12 +3,26 @@
       <span class="number">{{ verse.number }}</span>
       <p class="verse">{{ verse.text }}</p>
       <p class="translation">{{ verse.translation_en }}</p>
+
+      <details>
+         <summary>Indonesian translation</summary>
+         <p class="interpretation">
+            {{ verse.translation_id }}
+         </p>
+      </details>
+
+      <details>
+         <summary>Interpretation (Indonesian translation)</summary>
+         <p class="interpretation">
+            {{ interpretation }}
+         </p>
+      </details>
    </div>
 </template>
 
 <script>
    export default {
-      props: ["verse"],
+      props: ["verse", "interpretation"],
    };
 </script>
 
@@ -27,15 +41,17 @@
    }
 
    .verse {
-      font-weight: 550;
       margin-top: 25px;
       line-height: 32px;
       text-align: right;
       font-size: 1.2rem;
       margin-bottom: 35px;
+      font-family: "Amiri", serif;
    }
 
-   .translation {
+   summary,
+   .translation,
+   .interpretation {
       font-size: 1rem;
       line-height: 21px;
       letter-spacing: 0.5px;
@@ -43,12 +59,30 @@
          Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
    }
 
+   details {
+      margin-top: 30px;
+   }
+
+   summary {
+      outline: none;
+   }
+
+   summary:hover {
+      cursor: pointer;
+   }
+
+   .interpretation {
+      margin-top: 20px;
+   }
+
    @media screen and (min-width: 760px) {
       .verse {
          line-height: 38px;
       }
 
-      .translation {
+      summary,
+      .translation,
+      .interpretation {
          font-size: 0.9rem;
          line-height: 27px;
       }

@@ -3,9 +3,6 @@
 
    <div v-if="data.length === 0">
       <Skeleton />
-      <Skeleton />
-      <Skeleton />
-      <Skeleton />
    </div>
    <div v-else v-for="surah in data" :key="surah.number_of_surah">
       <Card :surah="surah" />

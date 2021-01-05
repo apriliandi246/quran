@@ -6,6 +6,41 @@
       <div class="block"></div>
       <div class="block"></div>
    </div>
+   <div class="skeleton">
+      <div class="block first_block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+   </div>
+   <div class="skeleton">
+      <div class="block first_block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+   </div>
+   <div class="skeleton">
+      <div class="block first_block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+   </div>
+   <div class="skeleton">
+      <div class="block first_block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+   </div>
+   <div class="skeleton">
+      <div class="block first_block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+   </div>
 </template>
 
 <style scoped>

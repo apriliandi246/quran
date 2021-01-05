@@ -3,11 +3,6 @@
 
    <div v-if="surah === null">
       <Skeleton />
-      <Skeleton />
-      <Skeleton />
-      <Skeleton />
-      <Skeleton />
-      <Skeleton />
    </div>
    <div v-else>
       <div class="card">
@@ -32,7 +27,10 @@
       </div>
 
       <div v-for="verse in surah.verses" :key="verse.number">
-         <Verse :verse="verse" />
+         <Verse
+            :verse="verse"
+            :interpretation="surah.tafsir.id.kemenag.text[verse.number]"
+         />
       </div>
    </div>
 </template>

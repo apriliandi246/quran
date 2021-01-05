@@ -19,5 +19,10 @@
       letter-spacing: 5px;
       font-family: cursive;
       text-decoration: none;
+      transition: color 0.1s;
+   }
+
+   a:hover {
+      color: #ff4500;
    }
 </style>
