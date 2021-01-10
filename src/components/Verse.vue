@@ -2,17 +2,12 @@
    <div class="card">
       <span class="number">{{ verse.number }}</span>
       <p class="verse">{{ verse.text }}</p>
-      <p class="translation">{{ verse.translation_en }}</p>
+      <p class="translation">
+         {{ language === "eng" ? verse.translation_en : verse.translation_id }}
+      </p>
 
-      <details>
-         <summary>Indonesian translation</summary>
-         <p class="interpretation">
-            {{ verse.translation_id }}
-         </p>
-      </details>
-
-      <details>
-         <summary>Interpretation (Indonesian translation)</summary>
+      <details v-if="language === 'id'">
+         <summary>Tafsir</summary>
          <p class="interpretation">
             {{ interpretation }}
          </p>
@@ -23,6 +18,12 @@
 <script>
    export default {
       props: ["verse", "interpretation"],
+
+      computed: {
+         language() {
+            return this.$store.getters.getLanguage;
+         },
+      },
    };
 </script>
 

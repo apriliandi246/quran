@@ -7,13 +7,26 @@
    <div v-else>
       <div class="card">
          <h1 class="name">{{ surah.name }}</h1>
-         <p class="translation">🔎 {{ surah.name_translations.en }}</p>
+
+         <p class="translation">
+            🔎
+            {{
+               language === "eng"
+                  ? surah.name_translations.en
+                  : surah.name_translations.id
+            }}
+         </p>
+
          <p class="number_of_surah">
-            🔢 Number of surah : {{ surah.number_of_surah }}
+            {{ language === "eng" ? "🔢 Number of surah" : "🔢 Surah ke" }} :
+            {{ surah.number_of_surah }}
          </p>
+
          <p class="number_of_ayah">
-            🔢 Number of ayah : {{ surah.number_of_ayah }}
+            {{ language === "eng" ? "🔢 Number of ayah" : "🔢 Jumlah ayat" }}:
+            {{ surah.number_of_ayah }}
          </p>
+
          <p class="type">🗺 {{ surah.type }}</p>
       </div>
 
@@ -45,6 +58,13 @@
    const { signal } = controller;
 
    export default {
+      data() {
+         return {
+            id: this.$route.params.id,
+            surah: null,
+         };
+      },
+
       components: {
          Header,
          Card,
@@ -52,11 +72,10 @@
          Verse,
       },
 
-      data() {
-         return {
-            id: this.$route.params.id,
-            surah: null,
-         };
+      computed: {
+         language() {
+            return this.$store.getters.getLanguage;
+         },
       },
 
       mounted() {

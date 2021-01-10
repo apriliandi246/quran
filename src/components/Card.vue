@@ -5,13 +5,26 @@
          :to="{ name: 'Detail', params: { id: surah.number_of_surah } }"
          >📌 {{ surah.name }}</router-link
       >
-      <p class="translation">🔎 {{ surah.name_translations.en }}</p>
+
+      <p class="translation">
+         🔎
+         {{
+            language === "eng"
+               ? surah.name_translations.en
+               : surah.name_translations.id
+         }}
+      </p>
+
       <p class="number_of_surah">
-         🔢 Number of surah : {{ surah.number_of_surah }}
+         {{ language === "eng" ? "🔢 Number of surah" : "🔢 Surah ke" }} :
+         {{ surah.number_of_surah }}
       </p>
+
       <p class="number_of_ayah">
-         🔢 Number of ayah : {{ surah.number_of_ayah }}
+         {{ language === "eng" ? "🔢 Number of ayah" : "🔢 Jumlah ayat" }}:
+         {{ surah.number_of_ayah }}
       </p>
+
       <p class="type">🗺 {{ surah.type }}</p>
    </div>
 </template>
@@ -19,18 +32,32 @@
 <script>
    export default {
       props: ["surah"],
+
+      computed: {
+         language() {
+            return this.$store.getters.getLanguage;
+         },
+      },
    };
 </script>
 
 <style scoped>
+   p {
+      color: #e9d8e0;
+      font-size: 1rem;
+      margin-bottom: 9px;
+      font-family: monospace;
+   }
+
    .card {
       padding: 20px;
       color: #ffffff;
       margin-bottom: -1px;
       letter-spacing: 0.9px;
+      border-radius: 3px;
       font-family: monospace;
       background-color: #131c25;
-      border-top: 5px solid #253a50;
+      border-top: 4px solid #253a50;
    }
 
    .name {
@@ -50,13 +77,6 @@
 
    .type {
       margin-bottom: 5px;
-   }
-
-   p {
-      color: #e9d8e0;
-      font-size: 1rem;
-      margin-bottom: 9px;
-      font-family: monospace;
    }
 
    @media screen and (min-width: 770px) {

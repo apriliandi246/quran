@@ -1,9 +1,30 @@
 <template>
    <router-link to="/">Qur'an</router-link>
+
+   <div class="languages">
+      <span @click="toIndonesian">Indonesia</span>
+      <span @click="toEnglish">English</span>
+   </div>
 </template>
 
 <script>
-   export default {};
+   export default {
+      computed: {
+         language() {
+            return this.$store.getters.getLanguage;
+         },
+      },
+
+      methods: {
+         toIndonesian() {
+            this.$store.state.language = "id";
+         },
+
+         toEnglish() {
+            this.$store.state.language = "eng";
+         },
+      },
+   };
 </script>
 
 <style scoped>
@@ -15,14 +36,35 @@
       font-size: 1.9rem;
       text-align: right;
       font-style: italic;
-      margin-bottom: 5px;
       letter-spacing: 5px;
       font-family: cursive;
       text-decoration: none;
       transition: color 0.1s;
    }
 
-   a:hover {
-      color: #ff4500;
+   .languages {
+      color: #f1f4f5;
+      margin-top: -2px;
+      text-align: right;
+      margin-bottom: 28px;
+   }
+
+   span {
+      font-size: 1em;
+      cursor: pointer;
+      margin-right: 35px;
+      letter-spacing: 1.2px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+         Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+   }
+
+   span:hover {
+      text-decoration: underline;
+   }
+
+   @media screen and (min-width: 1160px) {
+      span {
+         font-size: 0.9rem;
+      }
    }
 </style>
