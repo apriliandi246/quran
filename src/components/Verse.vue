@@ -41,23 +41,32 @@
       font-family: monospace;
    }
 
+   @font-face {
+      font-family: quranFont;
+      src: url("/quran.OTF");
+   }
+
    .verse {
       margin-top: 25px;
-      line-height: 32px;
+      font-size: 1.8rem;
       text-align: right;
-      font-size: 1.2rem;
+      line-height: 50px;
       margin-bottom: 35px;
-      font-family: "Amiri", serif;
+      font-family: quranFont;
+   }
+
+   .interpretation,
+   .translation {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+         Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
    }
 
    summary,
    .translation,
    .interpretation {
       font-size: 1rem;
-      line-height: 21px;
-      letter-spacing: 0.5px;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-         Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      line-height: 24px;
+      letter-spacing: 1px;
    }
 
    details {
@@ -78,14 +87,14 @@
 
    @media screen and (min-width: 760px) {
       .verse {
-         line-height: 38px;
+         line-height: 64px;
       }
 
       summary,
       .translation,
       .interpretation {
-         font-size: 0.9rem;
-         line-height: 27px;
+         font-size: 1rem;
+         line-height: 31px;
       }
    }
 </style>
