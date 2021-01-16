@@ -1,16 +1,31 @@
 <template>
    <div class="container">
       <router-view />
-      <div @click="scrollToTop" class="scroll-top">🔼</div>
+      <div v-if="scrollValue !== 0" @click="scrollToTop" class="scroll-top">
+         🔼
+      </div>
    </div>
 </template>
 
 <script>
+   import { computed, ref } from "vue";
+
    export default {
-      methods: {
-         scrollToTop() {
+      setup() {
+         const scrollValue = ref(window.scrollY);
+
+         function scrollToTop() {
             window.scrollTo(0, 0);
-         },
+         }
+
+         window.addEventListener("scroll", () => {
+            scrollValue.value = window.scrollY;
+         });
+
+         return {
+            scrollToTop,
+            scrollValue,
+         };
       },
    };
 </script>
@@ -22,14 +37,14 @@
    }
 
    .scroll-top {
-      top: 88%;
+      top: 90%;
       right: 0;
-      padding: 10px;
+      padding: 8px;
       cursor: pointer;
       position: fixed;
       font-size: 1.3rem;
       border-radius: 4px;
-      margin-right: 30px;
+      margin-right: 28px;
       transition: transform 0.1s;
       background-color: #38516d;
    }

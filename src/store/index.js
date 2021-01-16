@@ -1,9 +1,11 @@
 import { createStore } from "vuex";
 
+const lg = localStorage.getItem("language");
+
 export default createStore({
    state() {
       return {
-         language: "eng",
+         language: lg === null ? "id" : lg,
       };
    },
 

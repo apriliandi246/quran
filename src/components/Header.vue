@@ -2,8 +2,8 @@
    <router-link to="/">Qur'an</router-link>
 
    <div class="languages">
-      <span @click="toIndonesian">Indonesia</span>
-      <span @click="toEnglish">English</span>
+      <span @click="toIndonesian">🇮🇩 Indonesia</span>
+      <span @click="toEnglish">🇬🇧 English</span>
    </div>
 </template>
 
@@ -18,10 +18,12 @@
       methods: {
          toIndonesian() {
             this.$store.state.language = "id";
+            localStorage.setItem("language", "id");
          },
 
          toEnglish() {
             this.$store.state.language = "eng";
+            localStorage.setItem("language", "eng");
          },
       },
    };

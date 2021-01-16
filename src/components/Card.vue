@@ -52,9 +52,9 @@
    .card {
       padding: 20px;
       color: #ffffff;
+      border-radius: 1px;
       margin-bottom: -1px;
       letter-spacing: 0.9px;
-      border-radius: 3px;
       font-family: monospace;
       background-color: #131c25;
       border-top: 4px solid #253a50;
