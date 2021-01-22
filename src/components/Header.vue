@@ -2,29 +2,32 @@
    <router-link to="/">Qur'an</router-link>
 
    <div class="languages">
-      <span @click="toIndonesian">🇮🇩 Indonesia</span>
+      <span @click="toIndonesia">🇮🇩 Indonesia</span>
       <span @click="toEnglish">🇬🇧 English</span>
    </div>
 </template>
 
 <script>
+   import { useStore } from "vuex";
+
    export default {
-      computed: {
-         language() {
-            return this.$store.getters.getLanguage;
-         },
-      },
+      setup() {
+         const store = useStore();
 
-      methods: {
-         toIndonesian() {
-            this.$store.state.language = "id";
+         function toIndonesia() {
+            store.commit("changeLanguage", "id");
             localStorage.setItem("language", "id");
-         },
+         }
 
-         toEnglish() {
-            this.$store.state.language = "eng";
+         function toEnglish() {
+            store.commit("changeLanguage", "eng");
             localStorage.setItem("language", "eng");
-         },
+         }
+
+         return {
+            toIndonesia,
+            toEnglish,
+         };
       },
    };
 </script>

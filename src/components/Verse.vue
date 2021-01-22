@@ -16,13 +16,15 @@
 </template>
 
 <script>
+   import { computed } from "vue";
+   import { useStore } from "vuex";
+
    export default {
       props: ["verse", "interpretation"],
 
-      computed: {
-         language() {
-            return this.$store.getters.getLanguage;
-         },
+      setup() {
+         const language = computed(() => useStore().getters.getLanguage);
+         return { language };
       },
    };
 </script>

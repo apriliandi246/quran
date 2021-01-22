@@ -1,7 +1,7 @@
 <template>
    <Header />
 
-   <div v-if="data.length === 0">
+   <div v-if="isLoading">
       <Skeleton />
    </div>
    <div v-else v-for="surah in data" :key="surah.number_of_surah">
@@ -10,38 +10,27 @@
 </template>
 
 <script>
-   import Skeleton from "../components/Skeleton.vue";
-   import Header from "../components/Header.vue";
+   import useFetch from "../use/useFetch";
    import Card from "../components/Card.vue";
-
-   const controller = new AbortController();
-   const { signal } = controller;
+   import Header from "../components/Header.vue";
+   import Skeleton from "../components/Skeleton.vue";
 
    export default {
-      data() {
-         return {
-            data: [],
-         };
-      },
-
       components: {
-         Header,
          Card,
+         Header,
          Skeleton,
       },
 
-      mounted() {
-         fetch(
-            "https://raw.githubusercontent.com/penggguna/QuranJSON/master/quran.json",
-            signal
-         )
-            .then((res) => res.json())
-            .then((result) => (this.data = result))
-            .catch((err) => console.log(err));
-      },
+      setup() {
+         const { data, isLoading } = useFetch(
+            "https://raw.githubusercontent.com/penggguna/QuranJSON/master/quran.json"
+         );
 
-      unmounted() {
-         controller.abort();
+         return {
+            data,
+            isLoading,
+         };
       },
    };
 </script>

@@ -1,7 +1,7 @@
 <template>
    <Header />
 
-   <div v-if="surah === null">
+   <div v-if="isLoading">
       <Skeleton />
    </div>
    <div v-else>
@@ -49,49 +49,38 @@
 </template>
 
 <script>
+   import { computed } from "vue";
+   import { useStore } from "vuex";
+   import { useRoute } from "vue-router";
+   import useFetch from "../use/useFetch";
+
    import Card from "../components/Card.vue";
    import Verse from "../components/Verse.vue";
    import Header from "../components/Header.vue";
    import Skeleton from "../components/Skeleton.vue";
 
-   const controller = new AbortController();
-   const { signal } = controller;
-
    export default {
-      data() {
-         return {
-            id: this.$route.params.id,
-            surah: null,
-         };
-      },
-
       components: {
-         Header,
          Card,
-         Skeleton,
          Verse,
+         Header,
+         Skeleton,
       },
 
-      computed: {
-         language() {
-            return this.$store.getters.getLanguage;
-         },
-      },
+      setup() {
+         const id = useRoute().params.id;
+         const language = computed(() => useStore().getters.getLanguage);
+         const { data, isLoading } = useFetch(
+            `https://raw.githubusercontent.com/penggguna/QuranJSON/master/surah/${id}.json`
+         );
 
-      mounted() {
          window.scrollTo(0, 0);
 
-         fetch(
-            `https://raw.githubusercontent.com/penggguna/QuranJSON/master/surah/${this.id}.json`,
-            signal
-         )
-            .then((res) => res.json())
-            .then((data) => (this.surah = data))
-            .catch((err) => console.log(err));
-      },
-
-      unmounted() {
-         controller.abort();
+         return {
+            language,
+            isLoading,
+            surah: data,
+         };
       },
    };
 </script>
