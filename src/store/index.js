@@ -14,4 +14,10 @@ export default createStore({
          return state.language;
       },
    },
+
+   mutations: {
+      changeLanguage(state, language) {
+         state.language = language;
+      },
+   },
 });
