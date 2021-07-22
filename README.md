@@ -1,4 +1,4 @@
-<h1>🕌 Quran<h1/>
+<h1 align="center">🕌 Quran<h1/>
 
 <br>
   
@@ -23,7 +23,7 @@ Web application for reading, listening Qur'an. But, if you wanna read interpreta
 
 <h3 align="center">. . .</h3>
   
-### 🛠 Setup
+### 💾 Data
 
 Data from here : [🔗 API](https://github.com/penggguna/QuranJSON)
   
