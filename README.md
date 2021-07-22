@@ -1,4 +1,4 @@
-<h1 align="center">🕌 Quran<h1/>
+<h1 align="center">🕌 Quran</h1>
 
 <br>
   
